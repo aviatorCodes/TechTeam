@@ -1,0 +1,61 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #ffd59f;
+  align-items: center;
+}
+
+h2
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 17%;
+    justify-content: center;
+    line-height: 2.5;
+    border-radius: 50%;
+}
+
+.back-btn {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  position: relative;
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+}
+
+.back-btn > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.back-btn:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+
+.back-btn:hover {
+    box-shadow: 9px 9px 33px #bb833a;
+    transform: translateY(-2px);
+}

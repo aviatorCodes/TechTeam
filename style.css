@@ -1,0 +1,250 @@
+*
+{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+max-width: 100%;
+overflow-wrap: break-word;
+overflow-y: hidden;
+overflow-x: hidden;
+}
+
+img, video, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page:not(.loaded) .power-entry,
+.page:not(.loaded) .side-image {
+    animation: none !important;
+    opacity: 0;
+}
+
+.page {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.page.loaded {
+  opacity: 1;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111; 
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#preloader img {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+}
+
+.disclaimer
+{
+    font-family: 'Varela' sans-serif;
+}
+.row {
+    gap: 10rem;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.block {
+    font-family: "Varela" sans-serif;
+    margin-top: 10px;
+    margin-left: 100px;
+    font-weight: 600;
+    padding: 5px;
+}
+
+h1
+{
+    width: 100%;
+    font-family: "Varela" sans-serif;
+    display: flex;
+    font-weight: 600;
+    font-style: normal;
+    justify-content: center;
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: yellow;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.typewriter-wrapper {
+    font-size: 2.5rem;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    white-space: nowrap;
+}
+
+#typewriter-box {
+    display: inline-flex;
+    align-items: left;
+    min-width: 27ch;
+    min-height: 1.2em;
+}
+
+#typewriter-text {
+    margin-top: 40px;
+    font-family: 'Fira Code', monospace; 
+    display: inline-block;
+}
+
+.cursor {
+    display: inline-block;
+    margin-top: 10px;
+    width: 0.1ch;
+    height: 1em;
+    background-color: orange;
+    margin-top: 45px;
+    margin-left: 2px;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: trail-fade 0.6s forwards;
+  transform: translate(-50%, -50%);
+  image-rendering: pixelated;
+}
+
+@keyframes trail-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2) translate(-50%, -50%);
+  }
+}
+
+/*THE UPPER CONTENT IS FINE DO NOT MESS*/
+
+.container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 1em auto;
+    line-height: 1.6;
+    font-size: 1rem;
+    white-space: normal;
+    flex-wrap: nowrap;
+}
+
+.staircase
+{
+    font-family: 'Fira Code', monospace; 
+    font-weight: 600;
+    max-width: 650px; 
+    margin: 3em auto; 
+    line-height: 1.4;  
+    font-size: 16px;
+    white-space: normal; 
+    perspective: 1000px;
+}
+
+.staircase p 
+{
+    transform: translateZ(-1000px) scale(0.1);
+    animation: fadeInUp 2s ease-out forwards;
+    margin-bottom: 3rem;
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.staircase p:nth-child(1) {
+    margin-left: 0%;
+    animation-delay: 0.3s;
+}
+.staircase p:nth-child(2) {
+    margin-left: clamp(1rem, 2vw, 3rem);
+    animation-delay: 0.6s;
+}
+.staircase p:nth-child(3) {
+    margin-left: clamp(2rem, 4vw, 6rem);
+    animation-delay: 0.9s;
+}
+
+.side-image {
+    margin-top: 7rem;
+    width: 292px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; 
+    animation: floating 4s ease-in-out infinite;
+    will-change: transform;
+}
+
+@keyframes floating {
+    0%   { transform: translate(0px, 0px); }
+    25%  { transform: translate(15px, -20px); }
+    50%  { transform: translate(0px, -35px); }
+    75%  { transform: translate(-15px, -20px); }
+    100% { transform: translate(0px, 0px); }
+}
+
+.bottom-images 
+{
+    margin-top: -8rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 2.5rem 1rem;
+}
+
+.bottom-images img 
+{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+
+.bottom-images img:hover
+{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+}
